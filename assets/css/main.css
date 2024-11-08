@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  font-family: "Inter";
+}
+
+.padding-horizontal-default {
+  padding-left: 14vw;
+  padding-right: 14vw;
+}
+
+.padding-horizontal-default-left {
+  padding-left: 14vw;
+  padding-right: 9vw;
+}
+
+.padding-horizontal-empty-left {
+  padding-left: 14vw;
+}
+
+.bg-red-theme {
+  background-color: #a6282d;
+}
+
+.bg-dark-theme {
+  background-color: #0F131C;
+}
+
+.bg-blue-theme {
+  background-color: #052439;
+}
+
+.text-red-theme {
+  color: #a6282d;
+}
+
+.text-blue-theme {
+  color: #052439;
+}
+
+.hero-text {
+  font-size: 9rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.015625em;
+  margin-left: -0.7rem;
+}
+
+.title-text {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.015625em;
+}
+
+.title-text-sub {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.015625em;
+}
