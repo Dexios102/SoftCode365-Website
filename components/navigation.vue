@@ -16,22 +16,36 @@
           <v-col cols="8" class="text-body-1">
             <v-row no-gutters align="center" justify="center">
               <v-col cols="3" class="d-flex align-center justify-center">
-                <v-btn variant="text" class="text-capitalize">Home</v-btn>
+                <v-btn
+                  variant="text"
+                  class="text-capitalize"
+                  @click="navigateToHome"
+                  >Home</v-btn
+                >
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
-                <v-btn variant="text" class="text-capitalize"
-                  >Services
-                  <v-btn
-                    icon
-                    variant="text"
-                    size="x-small"
-                    @click="toggleDialog()"
-                  >
-                    <v-icon>{{
-                      isDialogOpen ? "mdi-chevron-up" : "mdi-chevron-down"
-                    }}</v-icon>
-                  </v-btn></v-btn
-                >
+                <v-row no-gutters align="center">
+                  <v-col cols="9">
+                    <v-btn
+                      variant="text"
+                      class="text-capitalize"
+                      @click="navigateToServices"
+                      >Services
+                    </v-btn>
+                  </v-col>
+                  <v-col cols="3">
+                    <v-btn
+                      icon
+                      variant="text"
+                      size="x-small"
+                      @click="toggleDialog()"
+                    >
+                      <v-icon>{{
+                        isDialogOpen ? "mdi-chevron-up" : "mdi-chevron-down"
+                      }}</v-icon>
+                    </v-btn>
+                  </v-col>
+                </v-row>
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
                 <v-btn variant="text" class="text-capitalize">About Us</v-btn>
@@ -90,9 +104,21 @@ definePageMeta({
   layout: "default",
 });
 
+const router = useRouter();
 const isDialogOpen = ref<boolean>(false);
 
 const toggleDialog = () => {
   isDialogOpen.value = !isDialogOpen.value;
+};
+
+const navigateToHome = () => {
+  router.push("/");
+};
+
+const navigateToServices = () => {
+  if (isDialogOpen.value) {
+    isDialogOpen.value = false;
+  }
+  router.push("/services");
 };
 </script>
