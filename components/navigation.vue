@@ -96,6 +96,7 @@
               size="large"
               class="rounded-xl text-capitalize text-body-1"
               color="#A6282D"
+              @click="navigateToContact()"
             >
               Contact Us
             </v-btn>
@@ -145,5 +146,12 @@ const navigateToAbout = () => {
   }
   router.push("/about");
 };
+
+const navigateToContact = () => {
+  if (isDialogOpen.value) {
+    isDialogOpen.value = false;
+  }
+  router.push("/contact");
+}
 
 </script>
