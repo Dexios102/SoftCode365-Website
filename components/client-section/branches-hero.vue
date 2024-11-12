@@ -22,6 +22,7 @@
                   size="large"
                   class="rounded-xl text-capitalize text-body-1 my-6"
                   color="#A6282D"
+                  @click="navigateToContact()"
                   >Contact Us</v-btn
                 >
               </v-col>
@@ -84,3 +85,13 @@
     </v-row>
   </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+const navigateToContact = () => {
+  navigateTo("/contact");
+};
+</script>
