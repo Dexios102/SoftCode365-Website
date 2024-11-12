@@ -26,6 +26,7 @@
                   size="large"
                   class="rounded-xl text-capitalize text-body-1 my-6"
                   color="#A6282D"
+                  @click="navigateToAbout()"
                   >Learn More</v-btn
                 >
                 <v-img
@@ -96,3 +97,15 @@
     </v-row>
   </div>
 </template>
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+const router = useRouter();
+
+const navigateToAbout = () => {
+  router.push("/about");
+};
+
+</script>
