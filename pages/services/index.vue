@@ -12,7 +12,7 @@
               class="rounded-xl bg-dark-theme h-100 text-white mb-10"
             >
               <v-col cols="12" justify="center">
-                <v-row no-gutters>
+                <v-row no-gutters align="center">
                   <v-col
                     cols="6"
                     class="d-flex align-center"
