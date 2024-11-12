@@ -73,7 +73,7 @@ const serviceGroups: ServiceItem[][] = [
     { icon: "/icons/mobile.png", text: "Apps" },
   ],
   [
-    { icon: "/icons/dashboard.png", text: "Dashboard" },
+    { icon: "/icons/template.png", text: "Templates" },
     { icon: "/icons/web-design.png", text: "Landing Pages" },
     { icon: "/icons/ui.png", text: "Ui Kits" },
   ],
