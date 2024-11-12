@@ -75,34 +75,52 @@
                     cols="12"
                     class="d-flex flex-column ga-1 justify-start align-start"
                   >
-                    <v-btn
-                      variant="text"
-                      class="text-capitalize font-weight-medium"
+                    <a
+                      href="https://www.facebook.com/softcode365"
+                      target="_blank"
                     >
-                      <v-icon size="large" class="mr-3">mdi-facebook</v-icon>
-                      Facebook
-                    </v-btn>
-                    <v-btn
-                      variant="text"
-                      class="text-capitalize font-weight-medium"
+                      <v-btn
+                        variant="text"
+                        class="text-capitalize font-weight-medium"
+                        color="black"
+                      >
+                        <v-icon size="large" class="mr-3">mdi-facebook</v-icon>
+                        Facebook
+                      </v-btn>
+                    </a>
+                    <a href="https://x.com/softcode365" target="_blank">
+                      <v-btn
+                        variant="text"
+                        class="text-capitalize font-weight-medium"
+                        color="black"
+                      >
+                        <v-icon size="large" class="mr-3">mdi-twitter</v-icon>
+                        Twitter
+                      </v-btn>
+                    </a>
+                    <a href="https://instagram.com/softcode365" target="_blank">
+                      <v-btn
+                        variant="text"
+                        class="text-capitalize font-weight-medium"
+                        color="black"
+                      >
+                        <v-icon size="large" class="mr-3">mdi-instagram</v-icon>
+                        Instagram
+                      </v-btn>
+                    </a>
+                    <a
+                      href="https://linkedin.com/company/softcode-365"
+                      target="_blank"
                     >
-                      <v-icon size="large" class="mr-3">mdi-twitter</v-icon>
-                      Twitter
-                    </v-btn>
-                    <v-btn
-                      variant="text"
-                      class="text-capitalize font-weight-medium"
-                    >
-                      <v-icon size="large" class="mr-3">mdi-instagram</v-icon>
-                      Instagram
-                    </v-btn>
-                    <v-btn
-                      variant="text"
-                      class="text-capitalize font-weight-medium"
-                    >
-                      <v-icon size="large" class="mr-3">mdi-linkedin</v-icon>
-                      LinkedIn
-                    </v-btn>
+                      <v-btn
+                        variant="text"
+                        class="text-capitalize font-weight-medium"
+                        color="black"
+                      >
+                        <v-icon size="large" class="mr-3">mdi-linkedin</v-icon>
+                        LinkedIn
+                      </v-btn>
+                    </a>
                   </v-col>
                 </v-row>
               </v-col>
@@ -113,15 +131,21 @@
       <v-col cols="12" class="border-t-md py-6">
         <v-row no-gutters align="center">
           <v-col cols="8">
-            <span class="text-subtitle-2 font-weight-medium">Copyright © 2024. Softcode365 Inc. All rights reserved.</span>
+            <span class="text-subtitle-2 font-weight-medium"
+              >Copyright © 2024. Softcode365 Inc. All rights reserved.</span
+            >
           </v-col>
           <v-col cols="4" align="end">
             <v-row no-gutters>
               <v-col cols="6">
-                <v-btn variant="text" class="text-capitalize" color="#a6282d">Terms & Conditions</v-btn>
+                <v-btn variant="text" class="text-capitalize" color="#a6282d"
+                  >Terms & Conditions</v-btn
+                >
               </v-col>
               <v-col cols="6">
-                <v-btn variant="text" class="text-capitalize" color="#a6282d">Privacy Policy</v-btn>
+                <v-btn variant="text" class="text-capitalize" color="#a6282d"
+                  >Privacy Policy</v-btn
+                >
               </v-col>
             </v-row>
           </v-col>
