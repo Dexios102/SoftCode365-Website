@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <HeroSectionHero />
-    <ServicesSectionServices />
-    <ClientSectionClient />
-    <PartnerSectionPartner />
-  </div>
+  <HeroSectionHero />
+  <ServicesSectionServices />
+  <ClientSectionClient />
+  <PartnerSectionPartner />
 </template>
