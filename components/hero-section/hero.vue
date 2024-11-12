@@ -69,7 +69,7 @@
           <v-col
             cols="12"
             class="position-relative"
-            style="height: 65vh"
+            style="height: 65vh;"
             v-show="activeImage === 0"
           >
             <div class="position-absolute bottom-0 right-0" style="z-index: 2">

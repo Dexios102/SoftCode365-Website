@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="position-relative">
     <v-row
       no-gutters
       class="border-b py-5 padding-horizontal-default align-center justify-center font-weight-medium"
@@ -19,7 +19,19 @@
                 <v-btn variant="text" class="text-capitalize">Home</v-btn>
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
-                <v-btn variant="text" class="text-capitalize">Services</v-btn>
+                <v-btn variant="text" class="text-capitalize"
+                  >Services
+                  <v-btn
+                    icon
+                    variant="text"
+                    size="x-small"
+                    @click="toggleDialog()"
+                  >
+                    <v-icon>{{
+                      isDialogOpen ? "mdi-chevron-up" : "mdi-chevron-down"
+                    }}</v-icon>
+                  </v-btn></v-btn
+                >
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
                 <v-btn variant="text" class="text-capitalize">About Us</v-btn>
@@ -62,6 +74,25 @@
           </v-col>
         </v-row>
       </v-col>
+      <div
+        class="position-absolute padding-horizontal-default py-2 w-100"
+        style="top: 5rem; z-index: 10"
+        v-if="isDialogOpen"
+      >
+        <ServicesDialog @close="toggleDialog" />
+      </div>
     </v-row>
   </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+const isDialogOpen = ref<boolean>(false);
+
+const toggleDialog = () => {
+  isDialogOpen.value = !isDialogOpen.value;
+};
+</script>

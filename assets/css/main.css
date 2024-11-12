@@ -18,6 +18,10 @@
   padding-left: 14vw;
 }
 
+.padding-horizontal-empty-right {
+  padding-right: 14vw;
+}
+
 .bg-red-theme {
   background-color: #a6282d;
 }
@@ -58,4 +62,25 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.015625em;
+}
+
+.title-text-sub1 {
+  font-size: 1.1rem;
+  letter-spacing: -0.015625em;
+}
+
+.font-w-600 {
+  font-weight: 500;
+}
+
+.text-s-3 {
+  font-size: 3rem;
+}
+
+.text-m-3 {
+  font-size: 1.5rem;
+}
+
+.text-small{
+  font-size: 0.9rem;
 }
