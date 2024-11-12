@@ -11,6 +11,7 @@
               src="/images/logo/softcode365logo.svg"
               width="140"
               cover
+              @click="navigateToHome()"
             ></v-img>
           </v-col>
           <v-col cols="8" class="text-body-1">
@@ -19,7 +20,7 @@
                 <v-btn
                   variant="text"
                   class="text-capitalize"
-                  @click="navigateToHome"
+                  @click="navigateToHome()"
                   >Home</v-btn
                 >
               </v-col>
@@ -29,7 +30,7 @@
                     <v-btn
                       variant="text"
                       class="text-capitalize"
-                      @click="navigateToServices"
+                      @click="navigateToServices()"
                       >Services
                     </v-btn>
                   </v-col>
@@ -48,7 +49,12 @@
                 </v-row>
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
-                <v-btn variant="text" class="text-capitalize">About Us</v-btn>
+                <v-btn
+                  variant="text"
+                  class="text-capitalize"
+                  @click="navigateToAbout()"
+                  >About Us</v-btn
+                >
               </v-col>
               <v-col cols="3" class="d-flex align-center justify-center">
                 <v-btn variant="text" class="text-capitalize">Career</v-btn>
@@ -62,18 +68,26 @@
           <v-col cols="9">
             <v-row no-gutters align="center" justify="end" class="d-flex">
               <v-col class="d-flex align-center justify-end mr-6">
-                <v-btn class="mx-1" icon size="x-small" color="black">
-                  <v-icon small>mdi-facebook</v-icon>
-                </v-btn>
-                <v-btn class="mx-1" icon size="x-small" color="black">
-                  <v-icon small>mdi-twitter</v-icon>
-                </v-btn>
-                <v-btn class="mx-1" icon size="x-small" color="black">
-                  <v-icon small>mdi-instagram</v-icon>
-                </v-btn>
-                <v-btn class="mx-1" icon size="x-small" color="black">
-                  <v-icon small>mdi-linkedin</v-icon>
-                </v-btn>
+                <a href="https://www.facebook.com/softcode365" target="_blank">
+                  <v-btn class="mx-1" icon size="x-small" color="black">
+                    <v-icon small>mdi-facebook</v-icon>
+                  </v-btn>
+                </a>
+                <a href="https://x.com/softcode365" target="_blank">
+                  <v-btn class="mx-1" icon size="x-small" color="black">
+                    <v-icon small>mdi-twitter</v-icon>
+                  </v-btn>
+                </a>
+                <a href="https://instagram.com/softcode365" target="_blank">
+                  <v-btn class="mx-1" icon size="x-small" color="black">
+                    <v-icon small>mdi-instagram</v-icon>
+                  </v-btn>
+                </a>
+                <a href="https://linkedin.com/company/softcode-365" target="_blank">
+                  <v-btn class="mx-1" icon size="x-small" color="black">
+                    <v-icon small>mdi-linkedin</v-icon>
+                  </v-btn>
+                </a>
               </v-col>
             </v-row>
           </v-col>
@@ -112,6 +126,9 @@ const toggleDialog = () => {
 };
 
 const navigateToHome = () => {
+  if (isDialogOpen.value) {
+    isDialogOpen.value = false;
+  }
   router.push("/");
 };
 
@@ -121,4 +138,12 @@ const navigateToServices = () => {
   }
   router.push("/services");
 };
+
+const navigateToAbout = () => {
+  if (isDialogOpen.value) {
+    isDialogOpen.value = false;
+  }
+  router.push("/about");
+};
+
 </script>
