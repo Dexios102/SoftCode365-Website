@@ -129,11 +129,11 @@
         <ServicesDialog @close="toggleDialog" />
       </div>
       <div
-        class="position-absolute padding-horizontal-default py-2 w-100"
+        class="position-absolute px-6 py-6 w-100"
         style="top: 5rem; z-index: 10"
-        v-if="isMenuOpen"
+        v-if="isMenuOpen && $vuetify.display.smAndDown"
       >
-        <ServicesDialog @close="toggleDialog" />
+        <NavigationMenu @close="toggleMenu" />
       </div>
     </v-row>
   </div>
