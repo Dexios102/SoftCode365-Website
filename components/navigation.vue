@@ -84,7 +84,10 @@
                     <v-icon small>mdi-instagram</v-icon>
                   </v-btn>
                 </a>
-                <a href="https://linkedin.com/company/softcode-365" target="_blank">
+                <a
+                  href="https://linkedin.com/company/softcode-365"
+                  target="_blank"
+                >
                   <v-btn class="mx-1" icon size="x-small" color="black">
                     <v-icon small>mdi-linkedin</v-icon>
                   </v-btn>
@@ -103,12 +106,13 @@
               Contact Us
             </v-btn>
           </v-col>
-          <v-col cols="4" md="3" class="d-flex align-center justify-center" v-if="$vuetify.display.smAndDown">
-            <v-btn
-              size="large"
-              variant="text"
-              @click="navigateToContact()"
-            >
+          <v-col
+            cols="4"
+            md="3"
+            class="d-flex align-center justify-center"
+            v-if="$vuetify.display.smAndDown"
+          >
+            <v-btn size="large" variant="text" @click="navigateToContact()">
               <v-icon size="large">mdi-menu</v-icon>
             </v-btn>
           </v-col>
@@ -163,6 +167,5 @@ const navigateToContact = () => {
     isDialogOpen.value = false;
   }
   router.push("/contact");
-}
-
+};
 </script>
