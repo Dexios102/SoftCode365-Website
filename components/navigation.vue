@@ -3,9 +3,9 @@
     <v-row
       no-gutters
       class="border-b py-5 align-center justify-center font-weight-medium"
-      :class="$vuetify.display.mdAndUp ? 'padding-horizontal-default' : 'px-6'"
+      :class="$vuetify.display.mdAndUp ? 'padding-horizontal-default' : 'px-4'"
     >
-      <v-col cols="6" md="7">
+      <v-col cols="6" md="7" class="w-100">
         <v-row no-gutters align="center" justify="start">
           <v-col cols="12" md="3">
             <v-img
@@ -15,7 +15,11 @@
               @click="navigateToHome()"
             ></v-img>
           </v-col>
-          <v-col cols="8" class="text-body-1" v-if="$vuetify.display.mdAndUp">
+          <v-col
+            cols="8"
+            class="text-body-1"
+            v-if="$vuetify.display.mdAndUp || isDialogOpen"
+          >
             <v-row no-gutters align="center" justify="center">
               <v-col cols="3" class="d-flex align-center justify-center">
                 <v-btn
@@ -64,7 +68,7 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="5" class="d-flex align-center justify-end">
+      <v-col cols="5" class="d-flex align-center justify-end w-100">
         <v-row no-gutters align="center" justify="center">
           <v-col cols="9" v-if="$vuetify.display.mdAndUp">
             <v-row no-gutters align="center" justify="end" class="d-flex">
@@ -95,10 +99,10 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="8" md="3" class="d-flex align-center justify-center">
+          <v-col cols="8" sm="9" md="3" class="d-flex align-center justify-end w-100">
             <v-btn
               size="large"
-              class="rounded-xl text-capitalize"
+              class="rounded-xl text-capitalize text-truncate"
               :class="$vuetify.display.mdAndUp ? 'text-body-1' : 'text-caption'"
               color="#A6282D"
               @click="navigateToContact()"
@@ -108,13 +112,12 @@
           </v-col>
           <v-col
             cols="4"
+            sm="2"
             md="3"
             class="d-flex align-center justify-center"
             v-if="$vuetify.display.smAndDown"
           >
-            <v-btn size="large" variant="text" @click="navigateToContact()">
-              <v-icon size="large">mdi-menu</v-icon>
-            </v-btn>
+            <v-icon size="large" @click="toggleMenu()">mdi-menu</v-icon>
           </v-col>
         </v-row>
       </v-col>
@@ -122,6 +125,13 @@
         class="position-absolute padding-horizontal-default py-2 w-100"
         style="top: 5rem; z-index: 10"
         v-if="isDialogOpen"
+      >
+        <ServicesDialog @close="toggleDialog" />
+      </div>
+      <div
+        class="position-absolute padding-horizontal-default py-2 w-100"
+        style="top: 5rem; z-index: 10"
+        v-if="isMenuOpen"
       >
         <ServicesDialog @close="toggleDialog" />
       </div>
@@ -136,9 +146,14 @@ definePageMeta({
 
 const router = useRouter();
 const isDialogOpen = ref<boolean>(false);
+const isMenuOpen = ref<boolean>(false);
 
 const toggleDialog = () => {
   isDialogOpen.value = !isDialogOpen.value;
+};
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
 };
 
 const navigateToHome = () => {

@@ -1,26 +1,20 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import { defineNuxtConfig } from 'nuxt/config';
+import { primaryTheme, vuetifyDefaults } from "./vuetify.options";
 
 export default defineNuxtConfig({
-  build: {
-    transpile: ["vuetify"],
-  },
-
   modules: [
-    (_options, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }));
-      });
-    },
+    'vuetify-nuxt-module',
     "@nuxt/image",
   ],
 
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls,
+  vuetify: {
+    vuetifyOptions: {
+      theme: {
+        themes: {
+          light: primaryTheme,
+        },
       },
+      defaults: vuetifyDefaults,
     },
   },
 
@@ -28,6 +22,6 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-06",
   css: ["vuetify/styles", "@/assets/css/main.css"],
   imports: {
-    dirs: ["composables/**", "types/**"], // Adjusted to include nested directories
+    dirs: ["composables/**", "types/**"],
   },
 });

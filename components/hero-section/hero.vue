@@ -3,44 +3,72 @@
     <v-row
       no-gutters
       class="border-b py-5 padding-horizontal-default-left align-center justify-center font-weight-medium hero-height"
+      :class="
+        $vuetify.display.mdAndUp ? 'padding-horizontal-default-left' : 'px-8'
+      "
+      align="center"
     >
-      <v-col cols="6" justify="center">
+      <v-col
+        cols="12"
+        md="6"
+        justify="center"
+        class="mt-8 mt-md-0"
+        :align="$vuetify.display.mdAndUp ? 'start' : 'center'"
+        :order="$vuetify.display.mdAndUp ? '1' : '2'"
+      >
         <v-row no-gutters>
           <v-col cols="12">
             <span>Always giving our best to provide services with</span>
           </v-col>
-          <v-col cols="12" class="my-4">
-            <span class="hero-text text-blue-theme">Excellency</span>
+          <v-col cols="12" class="my-4 w-100">
+            <span
+              class="text-blue-theme"
+              :class="
+                $vuetify.display.mdAndUp
+                  ? 'hero-text'
+                  : 'hero-text-small text-break'
+              "
+              >Excellency</span
+            >
           </v-col>
           <v-col cols="12">
-            <p class="text-body-1">
+            <p class="text-body-2">
               We are committed to delivering exceptional quality in all aspects
-              of our services.<br />
+              of our services.<br v-if="$vuetify.display.mdAndUp" />
               We strive for excellence in every task we undertake, setting high
               standards for ourselves and consistently exceeding expectations.
             </p>
           </v-col>
           <v-col cols="12" class="my-12">
             <v-row no-gutters align="center">
-              <v-col cols="5">
+              <v-col cols="12" md="5" class="mb-4 mb-md-0 px-8 px-md-0">
                 <v-btn
                   size="large"
                   block
                   class="rounded-xl text-capitalize text-body-1"
+                  :class="$vuetify.display.xs && 'text-body-2'"
                   color="#A6282D"
                   >Request a Free Quote</v-btn
                 >
               </v-col>
-              <span class="mx-6">or</span>
-              <v-col cols="4">
+              <span class="mx-6 mb-4 mb-md-0 w-100 w-md-auto">or</span>
+              <v-col cols="12" md="4">
                 <v-btn variant="text" class="text-capitalize" color="#a6282d"
                   >Learn More</v-btn
                 >
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="12">
-            <v-row no-gutters align="center" class="d-flex align-center ga-1">
+          <v-col
+            cols="12"
+            :align="$vuetify.display.mdAndUp ? 'start' : 'center'"
+          >
+            <v-row
+              no-gutters
+              align="center"
+              class="d-flex align-center ga-1"
+              :justify="$vuetify.display.mdAndUp ? 'start' : 'center'"
+            >
               <div
                 v-for="(image, index) in images"
                 :key="index"
@@ -63,98 +91,162 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="6" justify="center">
+      <v-col
+        cols="12"
+        md="6"
+        justify="center"
+        :order="$vuetify.display.mdAndUp ? '2' : '1'"
+      >
         <v-row no-gutters>
           <!-- Images 1 -->
           <v-col
             cols="12"
-            class="position-relative"
-            style="height: 65vh"
+            :style="$vuetify.display.mdAndUp ? 'height: 65vh' : 'height: auto;'"
             v-show="activeImage === 0"
+            class="pt-md-14"
           >
-            <div class="position-absolute bottom-0 right-0" style="z-index: 2">
-              <div class="position-relative">
-                <v-img :src="images[0].phoneSrc" cover width="650"></v-img>
+            <v-row no-gutters>
+              <v-col cols="12" class="position-relative">
+                <v-img
+                  :src="images[0].phoneSrc"
+                  cover
+                  height="100%"
+                  width="90%"
+                  class="position-absolute right-0 mt-6"
+                  style="z-index: 2; top: 2rem"
+                ></v-img>
+                <v-img
+                  :src="images[0].phoneSrc2"
+                  cover
+                  height="100%"
+                  width="90%"
+                  style="z-index: 3"
+                ></v-img>
+                <v-img
+                  src="/images/hero-images/circuit-frame-up.svg"
+                  cover
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
+                  class="position-absolute left-0 mb-1"
+                  style="z-index: 1; top: 0rem"
+                ></v-img>
                 <v-img
                   src="/images/hero-images/circuit-frame-down.svg"
                   cover
-                  width="300"
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
                   class="position-absolute right-0 mb-1"
-                  style="z-index: -1; bottom: 5rem"
+                  style="z-index: 1; bottom: 0rem"
                 ></v-img>
-                <div class="position-absolute" style="z-index: 3; top: -13rem; right: 4rem;">
-                  <div class="position-relative">
-                    <v-img :src="images[0].phoneSrc2" cover width="650"></v-img>
-                    <v-img
-                      src="/images/hero-images/circuit-frame-up.svg"
-                      cover
-                      width="300"
-                      class="position-absolute mb-1"
-                      style="z-index: -1; top: 2rem;"
-                    ></v-img>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </v-col>
+            </v-row>
           </v-col>
           <!-- Image 2 -->
           <v-col
             cols="12"
-            class="position-relative"
-            style="height: 65vh"
+            :style="$vuetify.display.mdAndUp ? 'height: 65vh' : 'height: auto;'"
             v-show="activeImage === 1"
+            class="pt-md-14"
           >
-            <div class="position-absolute left-0" style="z-index: 2">
-              <div class="position-relative">
-                <v-img :src="images[1].phoneSrc" cover width="800"></v-img>
+            <v-row no-gutters>
+              <v-col cols="12" class="position-relative">
                 <v-img
-                  src="/images/hero-images/circuit-frame-down.svg"
+                  :src="images[1].phoneSrc"
                   cover
-                  width="300"
-                  class="position-absolute right-0 mb-1"
-                  style="z-index: -1; bottom: 5rem"
+                  height="100%"
+                  width="100%"
+                  style="z-index: 2"
                 ></v-img>
                 <v-img
                   src="/images/hero-images/circuit-frame-up.svg"
                   cover
-                  width="300"
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
                   class="position-absolute left-0 mb-1"
-                  style="z-index: -1; top: 5rem"
+                  style="z-index: 1; top: 0rem"
                 ></v-img>
-              </div>
-            </div>
+                <v-img
+                  src="/images/hero-images/circuit-frame-down.svg"
+                  cover
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
+                  class="position-absolute right-0 mb-1"
+                  style="z-index: 1; bottom: 0rem"
+                ></v-img>
+              </v-col>
+            </v-row>
           </v-col>
           <!-- Image 3 -->
           <v-col
             cols="12"
-            class="position-relative"
-            style="height: 65vh"
+            :style="$vuetify.display.mdAndUp ? 'height: 65vh' : 'height: auto;'"
             v-show="activeImage === 2"
           >
-            <div class="position-absolute" style="z-index: 2; right: 4rem">
-              <div class="position-relative">
-                <v-img :src="images[2].phoneSrc" cover width="300"></v-img>
+            <v-row no-gutters>
+              <v-col cols="12" class="position-relative">
                 <v-img
-                  src="/images/hero-images/circuit-frame-down.svg"
+                  :src="images[2].phoneSrc"
                   cover
-                  width="300"
-                  class="position-absolute"
-                  style="z-index: -1; bottom: 5rem; right: -10rem"
+                  height="100%"
+                  width="50%"
+                  class="position-absolute right-0"
+                  style="z-index: 2; top: 0rem"
                 ></v-img>
-              </div>
-            </div>
-            <div class="position-absolute" style="z-index: 2; left: 4rem">
-              <div class="position-relative">
-                <v-img :src="images[2].phoneSrc2" cover width="300"></v-img>
+                <v-img
+                  :src="images[2].phoneSrc2"
+                  cover
+                  height="100%"
+                  width="50%"
+                  style="z-index: 3"
+                ></v-img>
                 <v-img
                   src="/images/hero-images/circuit-frame-up.svg"
                   cover
-                  width="300"
-                  class="position-absolute top-0 mt-8"
-                  style="z-index: -1; left: -10rem"
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
+                  class="position-absolute left-0 mb-1"
+                  style="z-index: 1; top: 0rem"
                 ></v-img>
-              </div>
-            </div>
+                <v-img
+                  src="/images/hero-images/circuit-frame-down.svg"
+                  cover
+                  :width="
+                    $vuetify.display.mdAndUp
+                      ? 400
+                      : $vuetify.display.sm
+                      ? 400
+                      : 200
+                  "
+                  class="position-absolute right-0 mb-1"
+                  style="z-index: 1; bottom: 0rem"
+                ></v-img>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-col>

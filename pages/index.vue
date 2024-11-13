@@ -1,6 +1,6 @@
 <template>
   <HeroSectionHero />
-  <ServicesSectionServices />
+  <!-- <ServicesSectionServices />
   <ClientSectionClient />
-  <PartnerSectionPartner />
+  <PartnerSectionPartner /> -->
 </template>
