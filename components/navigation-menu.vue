@@ -10,7 +10,7 @@
           <v-btn
             variant="text"
             class="text-capitalize w-100 d-flex align-center justify-start"
-            @click="navigateToHome()"
+            @click="navigateTo('')"
             >Home</v-btn
           >
         </v-col>
@@ -24,7 +24,7 @@
               <v-btn
                 variant="text"
                 class="text-capitalize w-100 d-flex align-center justify-start"
-                @click="navigateToServices()"
+                @click="navigateTo('services')"
                 >Services
               </v-btn>
             </v-col>
@@ -48,7 +48,7 @@
           <v-btn
             variant="text"
             class="text-capitalize w-100 d-flex align-center justify-start"
-            @click="navigateToAbout()"
+            @click="navigateTo('about')"
             >About Us</v-btn
           >
         </v-col>
@@ -106,6 +106,8 @@ definePageMeta({
   layout: "default",
 });
 
+const emit = defineEmits(["close"]);
+
 const router = useRouter();
 const isDialogOpen = ref<boolean>(false);
 
@@ -113,24 +115,15 @@ const toggleDialog = () => {
   isDialogOpen.value = !isDialogOpen.value;
 };
 
-const navigateToHome = () => {
+const closeDialogIfOpen = () => {
   if (isDialogOpen.value) {
     isDialogOpen.value = false;
   }
-  router.push("/");
 };
 
-const navigateToServices = () => {
-  if (isDialogOpen.value) {
-    isDialogOpen.value = false;
-  }
-  router.push("/services");
-};
-
-const navigateToAbout = () => {
-  if (isDialogOpen.value) {
-    isDialogOpen.value = false;
-  }
-  router.push("/about");
+const navigateTo = (route: string) => {
+  closeDialogIfOpen();
+  router.push(`/${route}`);
+  emit("close");
 };
 </script>
