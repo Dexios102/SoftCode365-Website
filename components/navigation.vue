@@ -2,11 +2,12 @@
   <div class="position-relative">
     <v-row
       no-gutters
-      class="border-b py-5 padding-horizontal-default align-center justify-center font-weight-medium"
+      class="border-b py-5 align-center justify-center font-weight-medium"
+      :class="$vuetify.display.mdAndUp ? 'padding-horizontal-default' : 'px-6'"
     >
-      <v-col cols="7">
+      <v-col cols="6" md="7">
         <v-row no-gutters align="center" justify="start">
-          <v-col cols="3">
+          <v-col cols="12" md="3">
             <v-img
               src="/images/logo/softcode365logo.svg"
               width="140"
@@ -14,7 +15,7 @@
               @click="navigateToHome()"
             ></v-img>
           </v-col>
-          <v-col cols="8" class="text-body-1">
+          <v-col cols="8" class="text-body-1" v-if="$vuetify.display.mdAndUp">
             <v-row no-gutters align="center" justify="center">
               <v-col cols="3" class="d-flex align-center justify-center">
                 <v-btn
@@ -65,7 +66,7 @@
       </v-col>
       <v-col cols="5" class="d-flex align-center justify-end">
         <v-row no-gutters align="center" justify="center">
-          <v-col cols="9">
+          <v-col cols="9" v-if="$vuetify.display.mdAndUp">
             <v-row no-gutters align="center" justify="end" class="d-flex">
               <v-col class="d-flex align-center justify-end mr-6">
                 <a href="https://www.facebook.com/softcode365" target="_blank">
@@ -91,14 +92,24 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="3" class="d-flex align-center justify-center">
+          <v-col cols="8" md="3" class="d-flex align-center justify-center">
             <v-btn
               size="large"
-              class="rounded-xl text-capitalize text-body-1"
+              class="rounded-xl text-capitalize"
+              :class="$vuetify.display.mdAndUp ? 'text-body-1' : 'text-caption'"
               color="#A6282D"
               @click="navigateToContact()"
             >
               Contact Us
+            </v-btn>
+          </v-col>
+          <v-col cols="4" md="3" class="d-flex align-center justify-center" v-if="$vuetify.display.smAndDown">
+            <v-btn
+              size="large"
+              variant="text"
+              @click="navigateToContact()"
+            >
+              <v-icon size="large">mdi-menu</v-icon>
             </v-btn>
           </v-col>
         </v-row>
