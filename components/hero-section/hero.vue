@@ -50,7 +50,7 @@
                   'bg-black': activeImage === index,
                   'bg-grey': activeImage !== index,
                 }"
-                style="padding-top: 3px;"
+                style="padding-top: 3px"
               ></div>
               <v-btn
                 density="compact"
@@ -69,7 +69,7 @@
           <v-col
             cols="12"
             class="position-relative"
-            style="height: 65vh;"
+            style="height: 65vh"
             v-show="activeImage === 0"
           >
             <div class="position-absolute bottom-0 right-0" style="z-index: 2">
@@ -82,18 +82,18 @@
                   class="position-absolute right-0 mb-1"
                   style="z-index: -1; bottom: 5rem"
                 ></v-img>
-              </div>
-            </div>
-            <div class="position-absolute left-0" style="z-index: 2">
-              <div class="position-relative">
-                <v-img :src="images[0].phoneSrc2" cover width="650"></v-img>
-                <v-img
-                  src="/images/hero-images/circuit-frame-up.svg"
-                  cover
-                  width="300"
-                  class="position-absolute top-0 left-0 mt-8"
-                  style="z-index: -1"
-                ></v-img>
+                <div class="position-absolute" style="z-index: 3; top: -13rem; right: 4rem;">
+                  <div class="position-relative">
+                    <v-img :src="images[0].phoneSrc2" cover width="650"></v-img>
+                    <v-img
+                      src="/images/hero-images/circuit-frame-up.svg"
+                      cover
+                      width="300"
+                      class="position-absolute mb-1"
+                      style="z-index: -1; top: 2rem;"
+                    ></v-img>
+                  </div>
+                </div>
               </div>
             </div>
           </v-col>
@@ -131,7 +131,7 @@
             style="height: 65vh"
             v-show="activeImage === 2"
           >
-            <div class="position-absolute" style="z-index: 2; right: 4rem;">
+            <div class="position-absolute" style="z-index: 2; right: 4rem">
               <div class="position-relative">
                 <v-img :src="images[2].phoneSrc" cover width="300"></v-img>
                 <v-img
@@ -139,11 +139,11 @@
                   cover
                   width="300"
                   class="position-absolute"
-                  style="z-index: -1; bottom: 5rem; right: -10rem;"
+                  style="z-index: -1; bottom: 5rem; right: -10rem"
                 ></v-img>
               </div>
             </div>
-            <div class="position-absolute" style="z-index: 2; left: 4rem;">
+            <div class="position-absolute" style="z-index: 2; left: 4rem">
               <div class="position-relative">
                 <v-img :src="images[2].phoneSrc2" cover width="300"></v-img>
                 <v-img
@@ -151,7 +151,7 @@
                   cover
                   width="300"
                   class="position-absolute top-0 mt-8"
-                  style="z-index: -1; left: -10rem;"
+                  style="z-index: -1; left: -10rem"
                 ></v-img>
               </div>
             </div>
@@ -209,11 +209,13 @@ onMounted(() => {
   min-height: 91.3vh;
   height: 100%;
 }
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
