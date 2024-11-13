@@ -3,9 +3,7 @@
     <v-row
       no-gutters
       class="border-b py-5 padding-horizontal-default-left align-center justify-center font-weight-medium hero-height"
-      :class="
-        $vuetify.display.mdAndUp ? 'padding-horizontal-default-left' : 'px-8'
-      "
+       :class="$vuetify.display.lgAndUp ? 'padding-horizontal-default-left' : $vuetify.display.md ? 'px-6' : 'px-8'"
       align="center"
     >
       <v-col
@@ -22,11 +20,11 @@
           </v-col>
           <v-col cols="12" class="my-4 w-100">
             <span
-              class="text-blue-theme"
+              class="text-blue-theme pl-md-2 pl-lg-0"
               :class="
-                $vuetify.display.mdAndUp
+                $vuetify.display.lgAndUp
                   ? 'hero-text'
-                  : 'hero-text-small text-break'
+                  : $vuetify.display.md ? 'hero-text-med' : 'hero-text-small text-break'
               "
               >Excellency</span
             >
@@ -95,6 +93,7 @@
         cols="12"
         md="6"
         justify="center"
+        class="pt-md-14"
         :order="$vuetify.display.mdAndUp ? '2' : '1'"
       >
         <v-row no-gutters>
@@ -106,7 +105,7 @@
             class="pt-md-14"
           >
             <v-row no-gutters>
-              <v-col cols="12" class="position-relative">
+              <v-col cols="12" class="position-relative" :style="$vuetify.display.lgAndUp ? 'right: -5rem; z-index: 1;' : 'z-index: 1;'">
                 <v-img
                   :src="images[0].phoneSrc"
                   cover
@@ -159,7 +158,7 @@
             class="pt-md-14"
           >
             <v-row no-gutters>
-              <v-col cols="12" class="position-relative">
+              <v-col cols="12" class="position-relative" :style="$vuetify.display.lgAndUp && 'right: -5rem'">
                 <v-img
                   :src="images[1].phoneSrc"
                   cover
@@ -203,11 +202,10 @@
             v-show="activeImage === 2"
           >
             <v-row no-gutters>
-              <v-col cols="12" class="position-relative">
+              <v-col cols="12" class="position-relative" :style="$vuetify.display.lgAndUp && 'right: -5rem'">
                 <v-img
                   :src="images[2].phoneSrc"
                   cover
-                  height="100%"
                   width="50%"
                   class="position-absolute right-0"
                   style="z-index: 2; top: 0rem"
@@ -215,7 +213,6 @@
                 <v-img
                   :src="images[2].phoneSrc2"
                   cover
-                  height="100%"
                   width="50%"
                   style="z-index: 3"
                 ></v-img>

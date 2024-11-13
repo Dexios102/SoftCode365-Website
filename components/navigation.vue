@@ -3,7 +3,7 @@
     <v-row
       no-gutters
       class="border-b py-5 align-center justify-center font-weight-medium"
-      :class="$vuetify.display.mdAndUp ? 'padding-horizontal-default' : 'px-4'"
+      :class="$vuetify.display.lgAndUp ? 'padding-horizontal-default' : $vuetify.display.md ? 'px-6' : 'px-4'"
     >
       <v-col cols="6" md="7" class="w-100">
         <v-row no-gutters align="center" justify="start">
@@ -16,7 +16,8 @@
             ></v-img>
           </v-col>
           <v-col
-            cols="8"
+            cols="9"
+            lg="8"
             class="text-body-1"
             v-if="$vuetify.display.mdAndUp || isDialogOpen"
           >
@@ -70,7 +71,7 @@
       </v-col>
       <v-col cols="5" class="d-flex align-center justify-end w-100">
         <v-row no-gutters align="center" justify="center">
-          <v-col cols="9" v-if="$vuetify.display.mdAndUp">
+          <v-col cols="8" lg="9" v-if="$vuetify.display.mdAndUp">
             <v-row no-gutters align="center" justify="end" class="d-flex">
               <v-col class="d-flex align-center justify-end mr-6">
                 <a href="https://www.facebook.com/softcode365" target="_blank">
@@ -99,7 +100,7 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="8" sm="9" md="3" class="d-flex align-center justify-end w-100">
+          <v-col cols="8" sm="9" md="4" lg="3" class="d-flex align-center justify-end w-100">
             <v-btn
               size="large"
               class="rounded-xl text-capitalize text-truncate"
@@ -122,9 +123,10 @@
         </v-row>
       </v-col>
       <div
-        class="position-absolute padding-horizontal-default py-2 w-100"
+        class="position-absolute py-2 w-100"
+        :class="$vuetify.display.lgAndUp ? 'padding-horizontal-default' : 'px-8'"
         style="top: 5rem; z-index: 10"
-        v-if="isDialogOpen"
+        v-if="isDialogOpen && $vuetify.display.mdAndUp"
       >
         <ServicesDialog @close="toggleDialog" />
       </div>

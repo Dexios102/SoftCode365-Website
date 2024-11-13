@@ -26,7 +26,7 @@
               align="center"
               style="box-shadow: 0px 8.57px 24px 0px #0000000d"
             >
-              <v-col cols="2">
+              <v-col cols="2" class="pr-md-1">
                 <v-img :src="item.icon" width="20" height="20"></v-img>
               </v-col>
               <v-col cols="10" class="text-truncate">
@@ -40,7 +40,7 @@
     <v-col
       cols="12"
       md="3"
-      class="bg-dark-theme text-white py-10 px-md-12 px-5"
+      class="bg-dark-theme text-white py-10 px-lg-12 px-5"
       :style="
         $vuetify.display.mdAndUp && 'box-shadow: 0px 8.57px 24px 0px #0000004d'
       "

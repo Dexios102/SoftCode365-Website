@@ -43,7 +43,7 @@
 }
 
 .hero-text {
-  font-size: 9rem;
+  font-size: 8rem;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.0045625em;
@@ -52,6 +52,14 @@
 
 .hero-text-small {
   font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.045625em;
+  margin-left: -0.7rem;
+}
+
+.hero-text-med {
+  font-size: 4rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.045625em;
