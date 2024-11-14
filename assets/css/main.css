@@ -18,6 +18,14 @@
   padding-left: 14vw;
 }
 
+.padding-horizontal-tablet-left {
+  padding-left: 2vw;
+}
+
+.padding-horizontal-tablet-right {
+  padding-right: 2vw;
+}
+
 .padding-horizontal-empty-right {
   padding-right: 14vw;
 }
