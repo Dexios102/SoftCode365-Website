@@ -2,19 +2,33 @@
   <div>
     <v-row
       no-gutters
-      class="rounded-s-xl bg-dark-theme h-100 text-white"
+      class="bg-dark-theme h-100 text-white"
+      :class="$vuetify.display.mdAndUp ? 'rounded-s-xl' : 'rounded-none'"
     >
       <v-col cols="12" justify="start">
         <v-row no-gutters>
           <v-col
-            cols="5"
+            cols="12"
+            md="5"
             class="d-flex align-center"
             style="padding: 6rem 0 6rem 0"
+            :order="$vuetify.display.mdAndUp ? '1' : '2'"
           >
             <v-row no-gutters justify="center">
-              <v-col cols="8" class="position-relative">
+              <v-col
+                cols="12"
+                md="8"
+                class="position-relative px-6 px-md-0"
+                :class="$vuetify.display.smAndDown && 'text-center'"
+              >
                 <h1 class="title-text-sub my-6">About Us</h1>
-                <p>
+                <p
+                  :class="
+                    $vuetify.display.smAndDown
+                      ? 'text-small text-center'
+                      : 'text-body-2'
+                  "
+                >
                   Softcode365 Inc., founded by the Singapore-based company
                   Seven365, stands as a testament to our commitment to
                   innovation and reliability. Backed by a history of exceptional
@@ -34,12 +48,12 @@
                   cover
                   width="300"
                   class="position-absolute mb-1"
-                  style="right: -9rem"
+                  :style="$vuetify.display.mdAndUp ? 'right: -9rem' : 'right: 0rem;'"
                 ></v-img>
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="7">
+          <v-col cols="12" md="7" :order="$vuetify.display.mdAndUp ? '2' : '1'">
             <v-row no-gutters>
               <v-col cols="8">
                 <v-row no-gutters
@@ -107,5 +121,4 @@ const router = useRouter();
 const navigateToAbout = () => {
   router.push("/about");
 };
-
 </script>
