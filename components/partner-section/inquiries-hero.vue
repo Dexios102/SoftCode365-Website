@@ -1,17 +1,36 @@
 <template>
-  <div>
-    <v-row no-gutters class="rounded-xl bg-dark-theme h-100 text-white mb-10">
+  <div class="w-100">
+    <v-row
+      no-gutters
+      class="bg-dark-theme h-100 text-white mb-10"
+      :class="$vuetify.display.mdAndUp ? 'rounded-xl' : 'rounded-none'"
+    >
       <v-col cols="12" justify="center">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col
-            cols="6"
-            class="d-flex align-center"
-            style="padding: 6rem 0 6rem 0"
+            cols="12"
+            md="6"
+            class="d-flex align-center px-6 px-md-0"
+            :style="
+              $vuetify.display.mdAndUp
+                ? 'padding: 6rem 0 6rem 0'
+                : 'padding: 2rem 0 2rem 0'
+            "
+            :order="$vuetify.display.mdAndUp ? '1' : '2'"
           >
             <v-row no-gutters justify="center">
-              <v-col cols="8" class="position-relative">
+              <v-col
+                cols="12"
+                md="8"
+                class="position-relative"
+                :class="$vuetify.display.smAndDown && 'text-center'"
+              >
                 <h1 class="title-text-sub my-6">Reach us for inquiries</h1>
-                <p>
+                <p
+                  :class="
+                    $vuetify.display.smAndDown ? 'text-small' : 'text-body-2'
+                  "
+                >
                   Contact us today to schedule a consultation and learn more
                   about our comprehensive range of services. Let us be your
                   trusted partner in success.
@@ -25,17 +44,26 @@
                 <v-img
                   src="/images/hero-images/circuit-frame-horizontal.svg"
                   cover
-                  width="300"
-                  class="position-absolute bottom-0"
-                   style="right: -9rem; transform: rotate(180deg);"
+                  :width="$vuetify.display.mdAndUp ? 300 : 200"
+                  class="position-absolute"
+                  style="transform: rotate(180deg)"
+                  :style="
+                    $vuetify.display.mdAndUp
+                      ? 'right: -9rem; bottom: 0rem;'
+                      : 'right: -1rem; bottom: -3rem;'
+                  "
                 ></v-img>
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="12" md="6" class="w-100 ":order="$vuetify.display.mdAndUp ? '2' : '1'">
             <v-row no-gutters
-              ><v-col cols="12" class="mt-10">
-                <v-img src="/images/Inquiry.png" cover></v-img> </v-col
+              ><v-col cols="12" class="mt-10 pl-6 pl-md-0">
+                <v-img
+                  src="/images/Inquiry.png"
+                  cover
+                  width="100%"
+                ></v-img> </v-col
             ></v-row>
           </v-col>
         </v-row>

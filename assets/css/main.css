@@ -26,6 +26,11 @@
   padding-right: 2vw;
 }
 
+.padding-horizontal-default-tablet {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
 .padding-horizontal-empty-right {
   padding-right: 14vw;
 }

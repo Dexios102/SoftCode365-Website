@@ -4,7 +4,15 @@
       <v-col cols="12" justify="center">
         <v-row
           no-gutters
-          class="padding-horizontal-default justify-center font-weight-medium"
+          class="justify-center font-weight-medium"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-default'
+              : $vuetify.display.md
+              ? 'px-6'
+              : 'px-8'
+          "
+          align="center"
         >
           <v-col cols="12" class="my-4 text-center">
             <span class="title-text text-blue-theme">Our Partners</span>
@@ -16,15 +24,24 @@
               to new heights.</span
             >
           </v-col>
-          <v-col cols="12" class="my-10 text-center border-md">
-            <v-row no-gutters class="d-flex justify-start flex-nowrap">
+          <v-col cols="12" class="my-10 text-center">
+            <v-row no-gutters class="d-flex justify-start"
+            :class="$vuetify.display.mdAndDown ? 'flex-wrap' : 'flex-nowrap'">
               <v-col
                 v-for="(item, index) in services"
                 :key="index"
-                class="d-flex justify-center align-center pa-6"
+                class="d-flex justify-center align-center pa-6 border"
                 style="
-                  flex: 0 0 16.5%;
                   box-shadow: 0px 8.57px 24px 0px #0000000d;
+                "
+                :style="
+                  $vuetify.display.xs
+                    ? 'flex: 0 0 100%'
+                    : $vuetify.display.sm
+                    ? 'flex: 0 0 50%'
+                    : $vuetify.display.md
+                    ? 'flex: 0 0 33.33%'
+                    : 'flex: 0 0 16.5%'
                 "
                 :class="{ 'border-e': index !== services.length - 1 }"
               >
@@ -36,9 +53,19 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col cols="12">
-            <PartnerSectionInquiriesHero />
-          </v-col>
+        </v-row>
+        <v-row
+          no-gutters
+          class="justify-center my-6 w-100"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-default'
+              : $vuetify.display.md
+              ? 'padding-horizontal-default-tablet'
+              : 'px-0'
+          "
+        >
+          <PartnerSectionInquiriesHero />
         </v-row>
       </v-col>
     </v-row>
