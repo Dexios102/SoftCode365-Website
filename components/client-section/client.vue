@@ -4,7 +4,15 @@
       <v-col cols="12" justify="center">
         <v-row
           no-gutters
-          class="padding-horizontal-default justify-center font-weight-medium"
+          class="justify-center font-weight-medium"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-default'
+              : $vuetify.display.md
+              ? 'px-6'
+              : 'px-8'
+          "
+          align="center"
         >
           <v-col cols="12" class="my-4 text-center">
             <span class="title-text text-blue-theme">Our Clients</span>
@@ -18,12 +26,12 @@
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <div class="slider my-10">
-            <div class="slide-track">
+          <div class="my-10 w-100 px-6 px-md-0" :class="$vuetify.display.mdAndUp && 'slider'">
+            <div :class="$vuetify.display.mdAndUp && 'slide-track'">
               <v-col
-                v-for="(item, index) in services.concat(services)"
+                v-for="(item, index) in $vuetify.display.mdAndUp ? services.concat(services) : services"
                 :key="index"
-                class="d-flex justify-center align-center border"
+                class="d-flex justify-center align-center border py-16 py-md-0"
                 :class="{ 'border-e': index !== services.length - 1 }"
                 style="
                   flex: 0 0 calc(100% / 5);
@@ -36,8 +44,15 @@
           </div>
         </v-row>
         <v-row
-          no-gutters
-          class="padding-horizontal-empty-right justify-start my-6"
+        no-gutters
+          class="justify-start my-6"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-empty-right'
+              : $vuetify.display.md
+              ? 'padding-horizontal-tablet-right'
+              : 'px-0'
+          "
         >
           <ClientSectionBranchesHero />
         </v-row>
