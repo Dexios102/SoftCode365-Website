@@ -4,7 +4,14 @@
       <v-col cols="12" justify="center">
         <v-row
           no-gutters
-          class="padding-horizontal-default justify-center font-weight-medium"
+          class="justify-center font-weight-medium"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-default'
+              : $vuetify.display.md
+              ? 'px-6'
+              : 'px-8'
+          "
         >
           <v-col cols="12" class="mb-12">
             <v-row
@@ -14,12 +21,27 @@
               <v-col cols="12" justify="center">
                 <v-row no-gutters align="center">
                   <v-col
-                    cols="6"
+                    cols="12"
+                    md="6"
                     class="d-flex align-center"
-                    style="padding: 6rem 0"
+                    :order="$vuetify.display.mdAndUp ? '1' : '2'"
+                    :style="
+                      $vuetify.display.mdAndUp
+                        ? 'padding: 6rem 0'
+                        : 'padding: 4rem 1rem'
+                    "
                   >
                     <v-row no-gutters justify="center">
-                      <v-col cols="8">
+                      <v-col
+                        cols="12"
+                        md="8"
+                        :class="
+                          $vuetify.display.mdAndUp
+                            ? 'text-small'
+                            : 'text-center text-small'
+                        "
+                        class="position-relative"
+                      >
                         <h1 class="title-text-sub my-6">About Us</h1>
                         <p class="text-small">
                           Softcode365 Inc., founded by the Singapore-based
@@ -30,12 +52,28 @@
                           workspace solutions and delivering successful business
                           projects with finesse.
                         </p>
+                        <v-img
+                          src="/images/hero-images/circuit-frame-horizontal.svg"
+                          cover
+                          width="200"
+                          class="position-absolute"
+                          style="right: 0rem; bottom: -5rem"
+                          v-if="$vuetify.display.smAndDown"
+                        />
                       </v-col>
                     </v-row>
                   </v-col>
-                  <v-col cols="6">
+                  <v-col
+                    cols="12"
+                    md="6"
+                    :order="$vuetify.display.mdAndUp ? '2' : '1'"
+                  >
                     <v-row no-gutters>
-                      <v-col cols="12" class="mt-10 position-relative">
+                      <v-col
+                        cols="12"
+                        class="mt-10 position-relative"
+                        :align="$vuetify.display.smAndDown && 'center'"
+                      >
                         <v-img
                           src="/icons/team-building.png"
                           width="250"
@@ -47,6 +85,7 @@
                           width="300"
                           class="position-absolute"
                           style="right: -4rem; bottom: 4rem"
+                          v-if="$vuetify.display.mdAndUp"
                         />
                       </v-col>
                     </v-row>
@@ -63,10 +102,12 @@
               <v-col cols="12" class="my-1 text-center">
                 <span class="text-blue-theme"
                   >Our vision is to stand as the forefront provider of
-                  cutting-edge business process <br />
+                  cutting-edge business process
+                  <br v-if="$vuetify.display.mdAndUp" />
                   of Software solutions and services and outsourcing renowned
-                  for our steadfast <br />
-                  dedication to excellence, integrity, and unparalleled <br />
+                  for our steadfast <br v-if="$vuetify.display.mdAndUp" />
+                  dedication to excellence, integrity, and unparalleled
+                  <br v-if="$vuetify.display.mdAndUp" />
                   customer satisfaction.
                 </span>
               </v-col>
@@ -74,7 +115,7 @@
           </v-col>
           <v-col cols="12" class="mb-8">
             <v-row no-gutters>
-              <v-col cols="6" class="d-flex align-stretch">
+              <v-col cols="12" md="6" class="d-flex align-stretch">
                 <ServiceCard title="Collaboration" imgSrc="/icons/mobile1.png">
                   We conduct our business with the utmost honesty, transparency,
                   and ethical integrity. Our relationships with clients,
@@ -82,7 +123,7 @@
                   fairness.
                 </ServiceCard>
               </v-col>
-              <v-col cols="6" class="d-flex align-stretch">
+              <v-col cols="12" md="6" class="d-flex align-stretch">
                 <ServiceCard title="Ownership" imgSrc="/icons/mobile1.png">
                   Our commitment to ownership extends to our relationships with
                   clients, employees, and clients, build on a foundation of
@@ -91,14 +132,14 @@
               </v-col>
             </v-row>
             <v-row no-gutters>
-              <v-col cols="6" class="d-flex align-stretch">
+              <v-col cols="12" md="6" class="d-flex align-stretch">
                 <ServiceCard title="Revolutionary" imgSrc="/icons/mobile1.png">
                   We thrive on a culture of perpetual learning and innovation,
                   constantly exploring and integrating cutting-edge technologies
                   to redefine the standards of efficiency and effectiveness.
                 </ServiceCard>
               </v-col>
-              <v-col cols="6" class="d-flex align-stretch">
+              <v-col cols="12" md="6" class="d-flex align-stretch">
                 <ServiceCard title="Excellence" imgSrc="/icons/mobile1.png">
                   We are committed to delivering exceptional quality in all
                   aspects of our services. We strive for excellence in every
@@ -116,7 +157,7 @@
               <v-col cols="12" class="my-1 text-center">
                 <span class="text-blue-theme"
                   >Meet the masterminds driving the creation of innovative
-                  business process <br />
+                  business process <br v-if="$vuetify.display.mdAndUp" />
                   solutions, technologies and top-notch customer service.
                 </span>
               </v-col>
@@ -125,12 +166,25 @@
         </v-row>
         <v-row no-gutters>
           <v-col cols="12" class="my-10 text-center border-md">
-            <v-row no-gutters class="d-flex justify-start flex-nowrap">
+            <v-row
+              no-gutters
+              class="d-flex justify-start"
+              :class="$vuetify.display.mdAndDown ? 'flex-wrap' : 'flex-nowrap'"
+            >
               <v-col
                 v-for="(item, index) in services"
                 :key="index"
                 class="d-flex justify-center align-center pa-6"
-                style="flex: 0 0 20%; box-shadow: 0px 8.57px 24px 0px #0000000d"
+                style="box-shadow: 0px 8.57px 24px 0px #0000000d"
+                :style="
+                  $vuetify.display.xs
+                    ? 'flex: 0 0 100%'
+                    : $vuetify.display.sm
+                    ? 'flex: 0 0 50%'
+                    : $vuetify.display.md
+                    ? 'flex: 0 0 33.33%'
+                    : 'flex: 0 0 20%'
+                "
                 :class="{ 'border-e': index !== services.length - 1 }"
               >
                 <div
@@ -146,12 +200,27 @@
         </v-row>
         <v-row
           no-gutters
-          class="padding-horizontal-empty-right justify-start my-6"
+          class="justify-start my-6"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-empty-right'
+              : $vuetify.display.md
+              ? 'padding-horizontal-tablet-right'
+              : 'px-0'
+          "
         >
           <ClientSectionBranchesHero />
         </v-row>
         <v-row
           no-gutters
+          class="justify-center my-6 w-100"
+          :class="
+            $vuetify.display.lgAndUp
+              ? 'padding-horizontal-default'
+              : $vuetify.display.md
+              ? 'padding-horizontal-default-tablet'
+              : 'px-0'
+          "
         >
           <PartnerSectionPartner />
         </v-row>

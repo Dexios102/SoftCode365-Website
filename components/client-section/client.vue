@@ -26,10 +26,15 @@
           </v-col>
         </v-row>
         <v-row no-gutters>
-          <div class="my-10 w-100 px-6 px-md-0" :class="$vuetify.display.mdAndUp && 'slider'">
+          <div
+            class="my-10 w-100 px-6 px-md-0"
+            :class="$vuetify.display.mdAndUp && 'slider'"
+          >
             <div :class="$vuetify.display.mdAndUp && 'slide-track'">
               <v-col
-                v-for="(item, index) in $vuetify.display.mdAndUp ? services.concat(services) : services"
+                v-for="(item, index) in $vuetify.display.mdAndUp
+                  ? services.concat(services)
+                  : services"
                 :key="index"
                 class="d-flex justify-center align-center border py-16 py-md-0"
                 :class="{ 'border-e': index !== services.length - 1 }"
@@ -44,7 +49,7 @@
           </div>
         </v-row>
         <v-row
-        no-gutters
+          no-gutters
           class="justify-start my-6"
           :class="
             $vuetify.display.lgAndUp
