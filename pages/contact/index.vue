@@ -33,7 +33,7 @@
           <v-col
             cols="12"
             md="4"
-            class="border bg-dark-theme pa-6 text-white ma-2 ma-md-0"
+            class="border bg-dark-theme pa-6 text-white"
             :class="$vuetify.display.smAndDown ? 'rounded-xl' : 'rounded-lg'"
           >
             <v-row no-gutters class="d-flex flex-column ga-10">
@@ -121,13 +121,14 @@
           </v-col>
           <v-col cols="12" md="8" class="pa-4 pa-md-14 position-relative">
             <v-row no-gutters class="py-md-16">
-              <v-col cols="12">
+              <v-col cols="12" class="mb-md-5">
                 <v-row no-gutters>
                   <v-col cols="12" md="6" class="pt-2 pt-md-0 pr-md-6">
                     <v-text-field
                       clearable
                       label="Subject"
                       variant="underlined"
+                      hide-details
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" md="6" class="pt-2 pt-md-0 pl-md-6">
@@ -136,11 +137,12 @@
                       label="Full name"
                       variant="underlined"
                       placeholder="John Doe"
+                      hide-details
                     ></v-text-field>
                   </v-col>
                 </v-row>
               </v-col>
-              <v-col cols="12">
+              <v-col cols="12" class="mb-md-5">
                 <v-row no-gutters>
                   <v-col cols="12" md="6" class="pt-2 pt-md-0 pr-md-6">
                     <v-text-field
@@ -148,6 +150,7 @@
                       label="Email"
                       variant="underlined"
                       placeholder="johndoe@gmail.com"
+                      hide-details
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12" md="6" class="pt-2 pt-md-0 pl-md-6">
@@ -155,16 +158,18 @@
                       clearable
                       label="Phone Number"
                       variant="underlined"
+                      hide-details
                     ></v-text-field>
                   </v-col>
                 </v-row>
               </v-col>
-              <v-col cols="12" class="pt-2 pt-md-0">
+              <v-col cols="12" class="pt-2 pt-md-0 mb-5">
                 <v-text-field
                   clearable
                   label="Message"
                   variant="underlined"
                   placeholder="Write your message..."
+                  hide-details
                 ></v-text-field
               ></v-col>
               <v-col cols="12" align="end" class="pt-4 pt-md-0">
