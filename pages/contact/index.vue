@@ -200,3 +200,14 @@
     </v-col>
   </v-row>
 </template>
+
+
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+onMounted(() => {
+    window.scrollTo(0,0)
+});
+</script>

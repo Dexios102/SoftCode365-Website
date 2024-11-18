@@ -58,6 +58,7 @@
             class="rounded-xl text-capitalize text-subtitle-1"
             color="#a6282d"
             size="large"
+            @click="navigateToContact()"
             >Request a Free Quote</v-btn
           >
         </v-col>
@@ -70,6 +71,12 @@
 interface ServiceItem {
   icon: string;
   text: string;
+}
+
+const router = useRouter();
+
+const navigateToContact = () => {
+  router.push('/contact');
 }
 
 const serviceGroups: ServiceItem[][] = [
