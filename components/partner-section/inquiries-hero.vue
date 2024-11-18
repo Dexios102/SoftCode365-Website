@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100">
+  <div class="w-100 overflow-hidden">
     <v-row
       no-gutters
       class="bg-dark-theme h-100 text-white mb-10"
@@ -39,6 +39,7 @@
                   size="large"
                   class="rounded-xl text-capitalize text-body-1 my-6"
                   color="#A6282D"
+                  @click="navigateToContact()"
                   >Request a Free Quote</v-btn
                 >
                 <v-img
@@ -50,7 +51,7 @@
                   :style="
                     $vuetify.display.mdAndUp
                       ? 'right: -9rem; bottom: 0rem;'
-                      : 'right: -1rem; bottom: -3rem;'
+                      : 'right: -4rem; bottom: -3rem;'
                   "
                 ></v-img>
               </v-col>
@@ -71,3 +72,15 @@
     </v-row>
   </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+const router = useRouter();
+
+const navigateToContact = () => {
+  router.push('/contact');
+};
+</script>

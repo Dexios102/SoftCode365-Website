@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <v-row no-gutters class="py-5">
       <v-col cols="12" justify="center">
         <v-row

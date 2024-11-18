@@ -122,7 +122,7 @@
         cover
         width="250"
         class="position-absolute mb-1 bottom-0"
-        :style="$vuetify.display.mdAndUp ? 'right: -4rem' : 'right: 0rem;'"
+        style="right: -4rem;"
       ></v-img>
     </v-row>
   </div>

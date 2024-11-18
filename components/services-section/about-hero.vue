@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <v-row
       no-gutters
       class="bg-dark-theme h-100 text-white"
@@ -48,7 +48,7 @@
                   cover
                   width="300"
                   class="position-absolute mb-1"
-                  :style="$vuetify.display.mdAndUp ? 'right: -9rem' : 'right: 0rem;'"
+                  :style="$vuetify.display.mdAndUp ? 'right: -9rem' : 'right: -4rem;'"
                 ></v-img>
               </v-col>
             </v-row>

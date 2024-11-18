@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <v-row no-gutters class="py-5">
       <v-col cols="12" justify="center">
         <v-row
@@ -54,7 +54,7 @@
                           cover
                           width="200"
                           class="position-absolute"
-                          style="right: 0rem; bottom: -5rem"
+                          style="right: -4rem; bottom: -5rem"
                           v-if="$vuetify.display.smAndDown"
                         />
                       </v-col>
@@ -150,4 +150,12 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: "default",
+});
+
+onMounted(() => {
+    window.scrollTo(0,0)
+});
+</script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <v-row
       no-gutters
       class="border-b py-5 align-center justify-center font-weight-medium hero-height"
@@ -38,7 +38,9 @@
             >
           </v-col>
           <v-col cols="12">
-            <p :class="$vuetify.display.mdAndDown ? 'text-body-2' : 'text-small'">
+            <p
+              :class="$vuetify.display.mdAndDown ? 'text-body-2' : 'text-small'"
+            >
               We are committed to delivering exceptional quality in all aspects
               of our services.<br v-if="$vuetify.display.mdAndUp" />
               We strive for excellence in every task we undertake, setting high
@@ -54,12 +56,17 @@
                   class="rounded-xl text-capitalize text-body-1"
                   :class="$vuetify.display.xs && 'text-body-2'"
                   color="#A6282D"
+                  @click="navigateToContact()"
                   >Request a Free Quote</v-btn
                 >
               </v-col>
               <span class="mx-6 mb-4 mb-md-0 w-100 w-md-auto">or</span>
               <v-col cols="12" md="4">
-                <v-btn variant="text" class="text-capitalize" color="#a6282d"
+                <v-btn
+                  variant="text"
+                  class="text-capitalize"
+                  color="#a6282d"
+                  @click="navigateToAbout()"
                   >Learn More</v-btn
                 >
               </v-col>
@@ -283,6 +290,16 @@ definePageMeta({
 interface Image {
   phoneSrc: string;
   phoneSrc2?: string;
+}
+
+const router = useRouter();
+
+const navigateToContact = () => {
+  router.push('/contact')
+}
+
+const navigateToAbout = () => {
+  router.push('/about')
 }
 
 const activeImage = ref<number>(0);
