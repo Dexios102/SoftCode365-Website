@@ -201,56 +201,45 @@
           <!-- Image 3 -->
           <v-col
             cols="12"
-            :style="$vuetify.display.mdAndUp ? 'height: 65vh' : 'height: auto;'"
+            class="position-relative"
+            :style="
+              $vuetify.display.lgAndUp
+                ? 'right: -3rem; z-index: 1;'
+                : 'z-index: 1;'
+            "
             v-show="activeImage === 2"
           >
-            <v-row no-gutters>
-              <v-col
-                cols="12"
-                class="position-relative"
-                :style="$vuetify.display.lgAndUp && 'right: -5rem'"
-              >
-                <v-img
-                  :src="images[2].phoneSrc"
-                  cover
-                  width="50%"
-                  class="position-absolute right-0"
-                  style="z-index: 2; top: 0rem"
-                ></v-img>
-                <v-img
-                  :src="images[2].phoneSrc2"
-                  cover
-                  width="50%"
-                  style="z-index: 3"
-                ></v-img>
-                <v-img
-                  src="/images/hero-images/circuit-frame-up.svg"
-                  cover
-                  :width="
-                    $vuetify.display.mdAndUp
-                      ? 400
-                      : $vuetify.display.sm
-                      ? 400
-                      : 200
-                  "
-                  class="position-absolute left-0 mb-1"
-                  style="z-index: 1; top: 0rem"
-                ></v-img>
-                <v-img
-                  src="/images/hero-images/circuit-frame-down.svg"
-                  cover
-                  :width="
-                    $vuetify.display.mdAndUp
-                      ? 400
-                      : $vuetify.display.sm
-                      ? 400
-                      : 200
-                  "
-                  class="position-absolute right-0 mb-1"
-                  style="z-index: 1; bottom: 0rem"
-                ></v-img>
-              </v-col>
-            </v-row>
+            <v-img
+              :src="images[2].phoneSrc"
+              cover
+              width="50%"
+              class="position-absolute right-0"
+              style="z-index: 2; top: 0rem"
+            ></v-img>
+            <v-img
+              :src="images[2].phoneSrc2"
+              cover
+              width="50%"
+              style="z-index: 3"
+            ></v-img>
+            <v-img
+              src="/images/hero-images/circuit-frame-up.svg"
+              cover
+              :width="
+                $vuetify.display.mdAndUp ? 300 : $vuetify.display.sm ? 400 : 200
+              "
+              class="position-absolute left-0 mb-1"
+              style="z-index: 1; top: 0rem"
+            ></v-img>
+            <v-img
+              src="/images/hero-images/circuit-frame-down.svg"
+              cover
+              :width="
+                $vuetify.display.mdAndUp ? 300 : $vuetify.display.sm ? 400 : 200
+              "
+              class="position-absolute right-0 mb-1"
+              style="z-index: 1; bottom: 0rem"
+            ></v-img>
           </v-col>
         </v-row>
       </v-col>
