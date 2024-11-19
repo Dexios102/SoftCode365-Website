@@ -114,7 +114,7 @@
           <!-- Images 1 -->
           <v-col
             cols="12"
-            class="position-relative"
+            class="position-relative mt-5 mt-md-0"
             :style="
               $vuetify.display.lgAndUp
                 ? 'right: -3rem; z-index: 1;'
