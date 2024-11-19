@@ -16,7 +16,7 @@
         cols="12"
         md="6"
         justify="center"
-        class="mt-8 mt-md-0"
+        class="mt-13 mt-md-0"
         :align="$vuetify.display.mdAndUp ? 'start' : 'center'"
         :order="$vuetify.display.mdAndUp ? '1' : '2'"
       >
