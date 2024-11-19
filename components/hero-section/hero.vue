@@ -291,12 +291,12 @@ const nextImage = () => {
   activeImage.value = (activeImage.value + 1) % images.value.length;
 };
 
-/* onMounted(() => {
+onMounted(() => {
   const interval = setInterval(() => {
     nextImage();
   }, 3000);
   onUnmounted(() => clearInterval(interval));
-}); */
+});
 </script>
 
 <style scoped>
