@@ -177,20 +177,20 @@
                 class="d-flex justify-center align-center pa-6"
                 style="box-shadow: 0px 8.57px 24px 0px #0000000d"
                 :style="
-      $vuetify.display.xs
-        ? index === 0
-          ? 'flex: 0 0 100%'
-          : 'flex: 0 0 50%'
-        : $vuetify.display.sm
-        ? index === 0
-          ? 'flex: 0 0 100%'
-          : 'flex: 0 0 50%'
-        : $vuetify.display.md
-        ? index < 2
-          ? 'flex: 0 0 50%'
-          : 'flex: 0 0 33.33%'
-        : 'flex: 0 0 20%'
-    "
+                  $vuetify.display.xs
+                    ? index === 0
+                      ? 'flex: 0 0 100%'
+                      : 'flex: 0 0 50%'
+                    : $vuetify.display.sm
+                    ? index === 0
+                      ? 'flex: 0 0 100%'
+                      : 'flex: 0 0 50%'
+                    : $vuetify.display.md
+                    ? index < 2
+                      ? 'flex: 0 0 50%'
+                      : 'flex: 0 0 33.33%'
+                    : 'flex: 0 0 20%'
+                "
                 :class="{ 'border-e': index !== services.length - 1 }"
               >
                 <div
@@ -263,6 +263,6 @@ const services: Team[] = [
 ];
 
 onMounted(() => {
-    window.scrollTo(0,0)
+  window.scrollTo(0, 0);
 });
 </script>
