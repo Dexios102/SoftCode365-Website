@@ -108,70 +108,55 @@
         cols="12"
         md="6"
         justify="center"
-        class="pt-md-14"
         :order="$vuetify.display.mdAndUp ? '2' : '1'"
       >
         <v-row no-gutters>
           <!-- Images 1 -->
           <v-col
             cols="12"
-            :style="$vuetify.display.mdAndUp ? 'height: 65vh' : 'height: auto;'"
+            class="position-relative"
+            :style="
+              $vuetify.display.lgAndUp
+                ? 'right: -3rem; z-index: 1;'
+                : 'z-index: 1;'
+            "
             v-show="activeImage === 0"
-            class="pt-md-14"
           >
-            <v-row no-gutters>
-              <v-col
-                cols="12"
-                class="position-relative"
-                :style="
-                  $vuetify.display.lgAndUp
-                    ? 'right: -5rem; z-index: 1;'
-                    : 'z-index: 1;'
-                "
-              >
-                <v-img
-                  :src="images[0].phoneSrc"
-                  cover
-                  height="100%"
-                  width="90%"
-                  class="position-absolute right-0 mt-6"
-                  style="z-index: 2; top: 2rem"
-                ></v-img>
-                <v-img
-                  :src="images[0].phoneSrc2"
-                  cover
-                  height="100%"
-                  width="90%"
-                  style="z-index: 3"
-                ></v-img>
-                <v-img
-                  src="/images/hero-images/circuit-frame-up.svg"
-                  cover
-                  :width="
-                    $vuetify.display.mdAndUp
-                      ? 400
-                      : $vuetify.display.sm
-                      ? 400
-                      : 200
-                  "
-                  class="position-absolute left-0 mb-1"
-                  style="z-index: 1; top: 0rem"
-                ></v-img>
-                <v-img
-                  src="/images/hero-images/circuit-frame-down.svg"
-                  cover
-                  :width="
-                    $vuetify.display.mdAndUp
-                      ? 400
-                      : $vuetify.display.sm
-                      ? 400
-                      : 200
-                  "
-                  class="position-absolute right-0 mb-1"
-                  style="z-index: 1; bottom: 0rem"
-                ></v-img>
-              </v-col>
-            </v-row>
+            <v-img
+              :src="images[0].phoneSrc"
+              cover
+              height="100%"
+              width="100%"
+              class="w-100 position-relative"
+              style="z-index: 2; right: -2rem; top: 5rem"
+            ></v-img>
+            <v-img
+              :src="images[0].phoneSrc2"
+              cover
+              height="100%"
+              width="90%"
+              class="w-100 position-absolute"
+              style="z-index: 3; left: 0rem;"
+              :style="$vuetify.display.mdAndUp ? ' bottom: 5rem;' : 'bottom: 1rem;'"
+            ></v-img>
+            <v-img
+              src="/images/hero-images/circuit-frame-up.svg"
+              cover
+              :width="
+                $vuetify.display.mdAndUp ? 300 : $vuetify.display.sm ? 400 : 200
+              "
+              class="position-absolute left-0 mb-1"
+              style="z-index: 1; top: -2rem;"
+            ></v-img>
+            <v-img
+              src="/images/hero-images/circuit-frame-down.svg"
+              cover
+              :width="
+                $vuetify.display.mdAndUp ? 300 : $vuetify.display.sm ? 400 : 200
+              "
+              class="position-absolute right-0 mb-1"
+              style="z-index: 1; bottom: 0rem"
+            ></v-img>
           </v-col>
           <!-- Image 2 -->
           <v-col
@@ -295,12 +280,12 @@ interface Image {
 const router = useRouter();
 
 const navigateToContact = () => {
-  router.push('/contact')
-}
+  router.push("/contact");
+};
 
 const navigateToAbout = () => {
-  router.push('/about')
-}
+  router.push("/about");
+};
 
 const activeImage = ref<number>(0);
 
@@ -326,12 +311,12 @@ const nextImage = () => {
   activeImage.value = (activeImage.value + 1) % images.value.length;
 };
 
-onMounted(() => {
+/* onMounted(() => {
   const interval = setInterval(() => {
     nextImage();
   }, 3000);
   onUnmounted(() => clearInterval(interval));
-});
+}); */
 </script>
 
 <style scoped>
